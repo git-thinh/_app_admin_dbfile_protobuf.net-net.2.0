@@ -1,0 +1,5 @@
+D:\_code\Debug\Service\CassiniDev.exe
+D:\_code\Debug\Service\CassiniDev.pdb
+D:\_code\CassiniDev\obj\Debug\CassiniDev.exe
+D:\_code\CassiniDev\obj\Debug\CassiniDev.pdb
+D:\_code\CassiniDev\obj\Debug\CassiniDev.csprojResolveAssemblyReference.cache

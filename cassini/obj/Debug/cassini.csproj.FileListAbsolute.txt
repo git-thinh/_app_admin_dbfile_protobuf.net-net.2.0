@@ -1,0 +1,8 @@
+D:\_code\Debug\Service\cassini.exe
+D:\_code\Debug\Service\cassini.pdb
+D:\_code\cassini\obj\Debug\cassini.exe
+D:\_code\cassini\obj\Debug\cassini.pdb
+D:\WebUI\webui\dev\source\study\www\cassini.exe
+D:\WebUI\webui\dev\source\study\www\cassini.pdb
+D:\WebUI\webui\dev\source\study\www\cassini.exe.config
+D:\_code\cassini\obj\Debug\cassini.csprojResolveAssemblyReference.cache

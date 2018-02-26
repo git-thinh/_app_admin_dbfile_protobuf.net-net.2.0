@@ -1,0 +1,2026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFC7C937-1104-4B93-B9E7-FFF075744A0C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>app</RootNamespace>
+    <AssemblyName>app</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>DLL\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLL\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Browser\core\AutoJSContext.cs" />
+    <Compile Include="Browser\core\BaseNsFactory.cs" />
+    <Compile Include="Browser\core\BaseTypes\AccessibleTextBoundary.cs" />
+    <Compile Include="Browser\core\BaseTypes\DOMHighResTimeStamp.cs" />
+    <Compile Include="Browser\core\BaseTypes\gfxContext.cs" />
+    <Compile Include="Browser\core\BaseTypes\gfxGraphicsFilter.cs" />
+    <Compile Include="Browser\core\BaseTypes\gfxMatrix.cs" />
+    <Compile Include="Browser\core\BaseTypes\gfxRect.cs" />
+    <Compile Include="Browser\core\BaseTypes\nscolor.cs" />
+    <Compile Include="Browser\core\BaseTypes\nsConstRect.cs" />
+    <Compile Include="Browser\core\BaseTypes\nsIntRect.cs" />
+    <Compile Include="Browser\core\BaseTypes\PivotMoveReason.cs" />
+    <Compile Include="Browser\core\BaseTypes\ScrollAxis.cs" />
+    <Compile Include="Browser\core\BaseTypes\TextBoundaryType.cs" />
+    <Compile Include="Browser\core\ByteArrayInputStream.cs" />
+    <Compile Include="Browser\core\Cache\CacheDeviceInfo.cs" />
+    <Compile Include="Browser\core\Cache\CacheEntryDescriptor.cs" />
+    <Compile Include="Browser\core\Cache\CacheEntryInfo.cs" />
+    <Compile Include="Browser\core\Cache\CacheService.cs" />
+    <Compile Include="Browser\core\Cache\CacheSession.cs" />
+    <Compile Include="Browser\core\Cache\ImageCache.cs" />
+    <Compile Include="Browser\core\Certificates\ASN1Object.cs" />
+    <Compile Include="Browser\core\Certificates\ASN1Tree.cs" />
+    <Compile Include="Browser\core\Certificates\CertCache.cs" />
+    <Compile Include="Browser\core\Certificates\Certificate.cs" />
+    <Compile Include="Browser\core\Certificates\CertificateDatabase.cs" />
+    <Compile Include="Browser\core\Certificates\CertificateList.cs" />
+    <Compile Include="Browser\core\Certificates\CertificateValidity.cs" />
+    <Compile Include="Browser\core\Certificates\CertTree.cs" />
+    <Compile Include="Browser\core\Certificates\CertTreeItem.cs" />
+    <Compile Include="Browser\core\ChromeContext.cs" />
+    <Compile Include="Browser\core\Collections\DomNodeList.cs" />
+    <Compile Include="Browser\core\Collections\GeckoArray.cs" />
+    <Compile Include="Browser\core\Collections\GeckoCollectionsHelper.cs" />
+    <Compile Include="Browser\core\Collections\GeckoEnumerableCollection.cs" />
+    <Compile Include="Browser\core\Collections\GeckoEnumerator.cs" />
+    <Compile Include="Browser\core\Collections\GeckoNodeEnumerator.cs" />
+    <Compile Include="Browser\core\Collections\StringEnumerator.cs" />
+    <Compile Include="Browser\core\ConsoleMessageEventArgs.cs" />
+    <Compile Include="Browser\core\Contracts.cs" />
+    <Compile Include="Browser\core\Cryptography\CryptoHash.cs" />
+    <Compile Include="Browser\core\Cryptography\Enums.cs" />
+    <Compile Include="Browser\core\Cryptography\KeyObject.cs" />
+    <Compile Include="Browser\core\Cryptography\KeyObjectFactory.cs" />
+    <Compile Include="Browser\core\CustomMarshalers\AStringMarshaler.cs" />
+    <Compile Include="Browser\core\CustomMarshalers\StringMarshaler.cs" />
+    <Compile Include="Browser\core\CustomMarshalers\WStringMarshaler.cs" />
+    <Compile Include="Browser\core\DOM\DocumentFragment.cs" />
+    <Compile Include="Browser\core\DOM\DomCharacterData.cs" />
+    <Compile Include="Browser\core\DOM\DomDocumentType.cs" />
+    <Compile Include="Browser\core\DOM\DomNavigator.cs" />
+    <Compile Include="Browser\core\DOM\DomParser.cs" />
+    <Compile Include="Browser\core\DOM\DOMSelector.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomDragEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DOMEventTarget.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomHashChangeEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomKeyEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomMessageEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomMouseEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomMouseScrollEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\Events\DomUIEventArgs.cs" />
+    <Compile Include="Browser\core\DOM\GeckoAttribute.cs" />
+    <Compile Include="Browser\core\DOM\GeckoComment.cs" />
+    <Compile Include="Browser\core\DOM\GeckoDomDocument.cs" />
+    <Compile Include="Browser\core\DOM\GeckoElement.cs" />
+    <Compile Include="Browser\core\DOM\GeckoElementCollection.cs" />
+    <Compile Include="Browser\core\DOM\GeckoElementEnumerable.cs" />
+    <Compile Include="Browser\core\DOM\GeckoNamedNodeMap.cs" />
+    <Compile Include="Browser\core\DOM\GeckoNode.cs" />
+    <Compile Include="Browser\core\DOM\GeckoNodeCollection.cs" />
+    <Compile Include="Browser\core\DOM\GeckoNodeEnumerable.cs" />
+    <Compile Include="Browser\core\DOM\GeckoStyle.cs" />
+    <Compile Include="Browser\core\DOM\GeckoTextNode.cs" />
+    <Compile Include="Browser\core\DOM\Html\GeckoDocument.cs" />
+    <Compile Include="Browser\core\DOM\Html\GeckoHtmlElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\GeckoHtmlElementCollection.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLAnchorElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLAppletElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLAreaElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLBaseElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLBaseFontElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLBodyElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLBRElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLButtonElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLCanvasElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLDirectoryElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLDivElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLEmbedElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLFieldSetElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLFormElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLFrameElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLFrameSetElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLHeadElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLHeadingElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLHRElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLHtmlElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLIFrameElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLImageElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLInputElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLLabelElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLLIElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLLinkElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLMapElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLMenuElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLMetaElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLObjectElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLOListElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLOptGroupElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLOptionElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLOptionsCollection.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLParagraphElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLPreElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLQuoteElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLScriptElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLSelectElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLStyleElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLTableCaptionElem.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLTableCellElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLTextAreaElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLTitleElement.cs" />
+    <Compile Include="Browser\core\DOM\Html\HTMLUListElement.cs" />
+    <Compile Include="Browser\core\DOM\Location.cs" />
+    <Compile Include="Browser\core\DOM\NodeType.cs" />
+    <Compile Include="Browser\core\DOM\Svg\SvgElement.cs" />
+    <Compile Include="Browser\core\DOM\Svg\SvgLength.cs" />
+    <Compile Include="Browser\core\DOM\Svg\SvgSvgElement.cs" />
+    <Compile Include="Browser\core\DOM\WindowUtils.cs" />
+    <Compile Include="Browser\core\DOM\Xml\XmlDocument.cs" />
+    <Compile Include="Browser\core\DOM\XPathResult.cs" />
+    <Compile Include="Browser\core\DOM\Xul\XulElement.cs" />
+    <Compile Include="Browser\core\Events\CertOverrideEventArgs.cs" />
+    <Compile Include="Browser\core\Events\GeckoDocumentCompletedEventArgs.cs" />
+    <Compile Include="Browser\core\Events\GeckoEventList.cs" />
+    <Compile Include="Browser\core\Events\GeckoEventListTmp.cs" />
+    <Compile Include="Browser\core\Events\GeckoNavigatingEventArgs.cs" />
+    <Compile Include="Browser\core\Events\GeckoNavigationErrorEventArgs.cs" />
+    <Compile Include="Browser\core\Events\GeckoNSSErrorEventArgs.cs" />
+    <Compile Include="Browser\core\GeckoElementExtensions.cs" />
+    <Compile Include="Browser\core\GeckoError.cs" />
+    <Compile Include="Browser\core\GeckoException.cs" />
+    <Compile Include="Browser\core\GeckoHistoryEntry.cs" />
+    <Compile Include="Browser\core\GeckoMarkupDocumentViewer.cs" />
+    <Compile Include="Browser\core\GeckoMIMEInputStream.cs" />
+    <Compile Include="Browser\core\GeckoMouseButton.cs" />
+    <Compile Include="Browser\core\GeckoPreferences.cs" />
+    <Compile Include="Browser\core\GeckoResponse.cs" />
+    <Compile Include="Browser\core\GeckoSelection.cs" />
+    <Compile Include="Browser\core\GeckoWindow.cs" />
+    <Compile Include="Browser\core\GeckoWindowCollection.cs" />
+    <Compile Include="Browser\core\GeckoWrapperCache.cs" />
+    <Compile Include="Browser\core\Generated\domstubs.cs" />
+    <Compile Include="Browser\core\Generated\extIApplication.cs" />
+    <Compile Include="Browser\core\Generated\fuelIApplication.cs" />
+    <Compile Include="Browser\core\Generated\IJSDebugger.cs" />
+    <Compile Include="Browser\core\Generated\imgICache.cs" />
+    <Compile Include="Browser\core\Generated\imgIContainer.cs" />
+    <Compile Include="Browser\core\Generated\imgIContainerDebug.cs" />
+    <Compile Include="Browser\core\Generated\imgIEncoder.cs" />
+    <Compile Include="Browser\core\Generated\imgILoader.cs" />
+    <Compile Include="Browser\core\Generated\imgINotificationObserver.cs" />
+    <Compile Include="Browser\core\Generated\imgIRequest.cs" />
+    <Compile Include="Browser\core\Generated\imgIScriptedNotificationObserver.cs" />
+    <Compile Include="Browser\core\Generated\imgITools.cs" />
+    <Compile Include="Browser\core\Generated\inICSSValueSearch.cs" />
+    <Compile Include="Browser\core\Generated\inIDeepTreeWalker.cs" />
+    <Compile Include="Browser\core\Generated\inIDOMUtils.cs" />
+    <Compile Include="Browser\core\Generated\inIDOMView.cs" />
+    <Compile Include="Browser\core\Generated\inIFlasher.cs" />
+    <Compile Include="Browser\core\Generated\inISearchObserver.cs" />
+    <Compile Include="Browser\core\Generated\inISearchProcess.cs" />
+    <Compile Include="Browser\core\Generated\ISimpleDOMDocument.cs" />
+    <Compile Include="Browser\core\Generated\ISimpleDOMNode.cs" />
+    <Compile Include="Browser\core\Generated\ISimpleDOMText.cs" />
+    <Compile Include="Browser\core\Generated\mozIAsyncFavicons.cs" />
+    <Compile Include="Browser\core\Generated\mozIAsyncHistory.cs" />
+    <Compile Include="Browser\core\Generated\mozIAsyncLivemarks.cs" />
+    <Compile Include="Browser\core\Generated\mozIJSSubScriptLoader.cs" />
+    <Compile Include="Browser\core\Generated\mozIPersonalDictionary.cs" />
+    <Compile Include="Browser\core\Generated\mozIPlacesAutoComplete.cs" />
+    <Compile Include="Browser\core\Generated\mozISpellCheckingEngine.cs" />
+    <Compile Include="Browser\core\Generated\mozISpellI18NManager.cs" />
+    <Compile Include="Browser\core\Generated\mozISpellI18NUtil.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageAggregateFunction.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageAsyncConnection.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageAsyncStatement.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageBaseStatement.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageBindingParams.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageBindingParamsArray.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageCompletionCallback.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageConnection.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageError.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageFunction.cs" />
+    <Compile Include="Browser\core\Generated\mozIStoragePendingStatement.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageProgressHandler.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageResultSet.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageRow.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageService.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageStatement.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageStatementCallback.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageVacuumParticipant.cs" />
+    <Compile Include="Browser\core\Generated\mozIStorageValueArray.cs" />
+    <Compile Include="Browser\core\Generated\mozIThirdPartyUtil.cs" />
+    <Compile Include="Browser\core\Generated\mozITXTToHTMLConv.cs" />
+    <Compile Include="Browser\core\Generated\nsCDefaultURIFixup.cs" />
+    <Compile Include="Browser\core\Generated\nsCExternalHandlerService.cs" />
+    <Compile Include="Browser\core\Generated\nsCURILoader.cs" />
+    <Compile Include="Browser\core\Generated\nsCWebBrowser.cs" />
+    <Compile Include="Browser\core\Generated\nsCWebBrowserPersist.cs" />
+    <Compile Include="Browser\core\Generated\nsGtkQtIconsConverter.cs" />
+    <Compile Include="Browser\core\Generated\nsIAboutModule.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessible.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleApplication.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleEditableText.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleHyperLink.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleHyperText.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleImage.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessiblePivot.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleRelation.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleRetrieval.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleRole.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleSelectable.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleStates.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleTable.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleText.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleTextRange.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleTypes.cs" />
+    <Compile Include="Browser\core\Generated\nsIAccessibleValue.cs" />
+    <Compile Include="Browser\core\Generated\nsIAddonInterposition.cs" />
+    <Compile Include="Browser\core\Generated\nsIAlertsService.cs" />
+    <Compile Include="Browser\core\Generated\nsIAndroidBridge.cs" />
+    <Compile Include="Browser\core\Generated\nsIAnnotationService.cs" />
+    <Compile Include="Browser\core\Generated\nsIApplicationCache.cs" />
+    <Compile Include="Browser\core\Generated\nsIApplicationCacheChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIApplicationCacheContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIApplicationCacheService.cs" />
+    <Compile Include="Browser\core\Generated\nsIAppShell.cs" />
+    <Compile Include="Browser\core\Generated\nsIAppShellService.cs" />
+    <Compile Include="Browser\core\Generated\nsIAppStartup.cs" />
+    <Compile Include="Browser\core\Generated\nsIArray.cs" />
+    <Compile Include="Browser\core\Generated\nsIASN1Object.cs" />
+    <Compile Include="Browser\core\Generated\nsIASN1PrintableItem.cs" />
+    <Compile Include="Browser\core\Generated\nsIASN1Sequence.cs" />
+    <Compile Include="Browser\core\Generated\nsIASN1Tree.cs" />
+    <Compile Include="Browser\core\Generated\nsIAssociatedContentSecurity.cs" />
+    <Compile Include="Browser\core\Generated\nsIAsyncInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIAsyncOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIAsyncStreamCopier.cs" />
+    <Compile Include="Browser\core\Generated\nsIAsyncVerifyRedirectCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIAtom.cs" />
+    <Compile Include="Browser\core\Generated\nsIAtomService.cs" />
+    <Compile Include="Browser\core\Generated\nsIAudioManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthInformation.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthModule.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthPrompt.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthPrompt2.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthPromptAdapterFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthPromptCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIAuthPromptProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompleteController.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompleteInput.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompletePopup.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompleteResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompleteSearch.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoCompleteSimpleResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIAutoConfig.cs" />
+    <Compile Include="Browser\core\Generated\nsIBadCertListener2.cs" />
+    <Compile Include="Browser\core\Generated\nsIBaseWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIBFCacheEntry.cs" />
+    <Compile Include="Browser\core\Generated\nsIBidiKeyboard.cs" />
+    <Compile Include="Browser\core\Generated\nsIBinaryInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIBinaryOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIBlocklistService.cs" />
+    <Compile Include="Browser\core\Generated\nsIBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserDOMWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserGlue.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserHistory.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserProfileMigrator.cs" />
+    <Compile Include="Browser\core\Generated\nsIBrowserSearchService.cs" />
+    <Compile Include="Browser\core\Generated\nsIBufEntropyCollector.cs" />
+    <Compile Include="Browser\core\Generated\nsIBufferedStreams.cs" />
+    <Compile Include="Browser\core\Generated\nsIByteRangeRequest.cs" />
+    <Compile Include="Browser\core\Generated\nsICache.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheEntryDescriptor.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheInfoChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheListener.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheService.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheSession.cs" />
+    <Compile Include="Browser\core\Generated\nsICacheVisitor.cs" />
+    <Compile Include="Browser\core\Generated\nsICachingChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsICancelable.cs" />
+    <Compile Include="Browser\core\Generated\nsICancelableRunnable.cs" />
+    <Compile Include="Browser\core\Generated\nsICategoryManager.cs" />
+    <Compile Include="Browser\core\Generated\nsICellInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsICertificateDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsICertificatePrincipal.cs" />
+    <Compile Include="Browser\core\Generated\nsICertOverrideService.cs" />
+    <Compile Include="Browser\core\Generated\nsICertPickDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsICertTree.cs" />
+    <Compile Include="Browser\core\Generated\nsIChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIChannelEventSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIChannelPolicy.cs" />
+    <Compile Include="Browser\core\Generated\nsIChildChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIChromeRegistry.cs" />
+    <Compile Include="Browser\core\Generated\nsIClassInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIClientAuthDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboard.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboardCommands.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboardDragDropHookList.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboardDragDropHooks.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboardHelper.cs" />
+    <Compile Include="Browser\core\Generated\nsIClipboardOwner.cs" />
+    <Compile Include="Browser\core\Generated\nsICollation.cs" />
+    <Compile Include="Browser\core\Generated\nsICollection.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandLine.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandLineHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandLineRunner.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandLineValidator.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandManager.cs" />
+    <Compile Include="Browser\core\Generated\nsICommandParams.cs" />
+    <Compile Include="Browser\core\Generated\nsIComponentManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIComponentRegistrar.cs" />
+    <Compile Include="Browser\core\Generated\nsICompositionStringSynthesizer.cs" />
+    <Compile Include="Browser\core\Generated\nsIConsoleListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIConsoleMessage.cs" />
+    <Compile Include="Browser\core\Generated\nsIConsoleService.cs" />
+    <Compile Include="Browser\core\Generated\nsIContainerBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentDispatchChooser.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentPermissionPrompt.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentPolicy.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentPrefService.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentSecurityPolicy.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentSniffer.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentURIGrouper.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentViewer.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentViewerContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentViewerEdit.cs" />
+    <Compile Include="Browser\core\Generated\nsIContentViewerFile.cs" />
+    <Compile Include="Browser\core\Generated\nsIContextMenuListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIContextMenuListener2.cs" />
+    <Compile Include="Browser\core\Generated\nsIController.cs" />
+    <Compile Include="Browser\core\Generated\nsIControllerCommand.cs" />
+    <Compile Include="Browser\core\Generated\nsIControllerCommandTable.cs" />
+    <Compile Include="Browser\core\Generated\nsIControllerContext.cs" />
+    <Compile Include="Browser\core\Generated\nsIControllers.cs" />
+    <Compile Include="Browser\core\Generated\nsIConverterInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIConverterOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsICookie.cs" />
+    <Compile Include="Browser\core\Generated\nsICookie2.cs" />
+    <Compile Include="Browser\core\Generated\nsICookieAcceptDialog.cs" />
+    <Compile Include="Browser\core\Generated\nsICookieManager.cs" />
+    <Compile Include="Browser\core\Generated\nsICookieManager2.cs" />
+    <Compile Include="Browser\core\Generated\nsICookiePermission.cs" />
+    <Compile Include="Browser\core\Generated\nsICookiePromptService.cs" />
+    <Compile Include="Browser\core\Generated\nsICookieService.cs" />
+    <Compile Include="Browser\core\Generated\nsICrashReporter.cs" />
+    <Compile Include="Browser\core\Generated\nsICryptoFIPSInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsICryptoHash.cs" />
+    <Compile Include="Browser\core\Generated\nsICryptoHMAC.cs" />
+    <Compile Include="Browser\core\Generated\nsICurrentCharsetListener.cs" />
+    <Compile Include="Browser\core\Generated\nsICycleCollectorListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDataSignatureVerifier.cs" />
+    <Compile Include="Browser\core\Generated\nsIDebug.cs" />
+    <Compile Include="Browser\core\Generated\nsIDebug2.cs" />
+    <Compile Include="Browser\core\Generated\nsIDeviceSensors.cs" />
+    <Compile Include="Browser\core\Generated\nsIDialogParamBlock.cs" />
+    <Compile Include="Browser\core\Generated\nsIDirectoryEnumerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIDirectoryService.cs" />
+    <Compile Include="Browser\core\Generated\nsIDirIndex.cs" />
+    <Compile Include="Browser\core\Generated\nsIDirIndexListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDNSListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDNSRecord.cs" />
+    <Compile Include="Browser\core\Generated\nsIDNSService.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocCharset.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocShell.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocShellLoadInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocShellTreeItem.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocShellTreeOwner.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocumentEncoder.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocumentLoader.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocumentLoaderFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsIDocumentStateListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDomainPolicy.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMAnimationEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMApplicationRegistry.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMAttr.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMBeforeUnloadEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCanvasRenderingContext2D.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCDATASection.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCharacterData.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMChromeWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMClientRect.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMClientRectList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCommandEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMComment.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCompositionEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMConstructor.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCounter.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCrypto.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCryptoDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSCharsetRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSConditionRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSFontFaceRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSGroupingRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSImportRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSMediaRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSMozDocumentRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSPageRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSPrimitiveValue.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSRuleList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSStyleDeclaration.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSStyleRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSStyleSheet.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSUnknownRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSValue.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCSSValueList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMCustomEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDataContainerEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDataTransfer.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDesktopNotification.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDocumentFragment.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDocumentType.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDocumentXBL.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDOMCursor.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDOMException.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDOMImplementation.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDOMRequest.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMDragEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMElementCSSInlineStyle.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMEventListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMEventTarget.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFile.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFileList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFileReader.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFontFace.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFontFaceList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMFormData.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoGeolocation.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoPosition.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoPositionCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoPositionCoords.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoPositionError.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGeoPositionErrorCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMGlobalPropertyInitializer.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHistory.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLAnchorElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLAppletElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLAreaElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLBaseElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLBodyElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLBRElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLButtonElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLCanvasElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLCollection.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLDirectoryElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLDivElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLEmbedElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLFieldSetElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLFormElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLFrameElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLFrameSetElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLHeadElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLHeadingElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLHRElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLHtmlElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLIFrameElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLImageElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLInputElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLLabelElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLLIElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLLinkElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLMapElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLMediaElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLMenuElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLMenuItemElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLMetaElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLObjectElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLOListElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLOptGroupElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLOptionElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLOptionsCollection.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLParagraphElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLPreElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLQuoteElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLScriptElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLSelectElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLSourceElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLStyleElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLTableCaptionElem.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLTableCellElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLTableElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLTextAreaElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLTitleElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMHTMLUListElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMIccInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMJSWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMKeyEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMLocation.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMediaError.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMediaList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMediaStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMessageEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMModalContentWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMouseEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMouseScrollEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozBrowserFrame.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozCellBroadcastMessage.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozCSSKeyframeRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozCSSKeyframesRule.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozNamedAttrMap.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMozSmsMessage.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMMutationEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNavigator.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNode.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNodeFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNodeIterator.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNodeList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNotifyPaintEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNSEditableElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMNSEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMOfflineResourceList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMPaintRequest.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMParser.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMProcessingInstruction.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMRange.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMRect.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMScreen.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMScrollAreaEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSerializer.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSimpleGestureEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSmsFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSmsSegmentInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMStorage.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMStorageManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMStyleSheet.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMStyleSheetList.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSVGElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMSVGLength.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMText.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMTimeEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMTimeRanges.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMTouchEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMTransitionEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMTreeWalker.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMUIEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMUserDataHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMValidityState.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMWakeLockListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMWebGLRenderingContext.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMWindowCollection.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMWindowUtils.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXMLDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXPathEvaluator.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXPathNSResolver.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXPathResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULButtonElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULCheckboxElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULCommandDispatcher.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULCommandEvent.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULContainerElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULControlElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULDescriptionElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULImageElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULLabeledControlEl.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULLabelElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULMenuListElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULMultSelectCntrlEl.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULPopupElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULRelatedElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULSelectCntrlEl.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULSelectCntrlItemEl.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULTextboxElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDOMXULTreeElement.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownload.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownloader.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownloadHistory.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownloadManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownloadManagerUI.cs" />
+    <Compile Include="Browser\core\Generated\nsIDownloadProgressListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIDragService.cs" />
+    <Compile Include="Browser\core\Generated\nsIDragSession.cs" />
+    <Compile Include="Browser\core\Generated\nsIDroppedLinkHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditActionListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditingSession.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorIMESupport.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorMailSupport.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorSpellCheck.cs" />
+    <Compile Include="Browser\core\Generated\nsIEditorStyleSheets.cs" />
+    <Compile Include="Browser\core\Generated\nsIEffectiveTLDService.cs" />
+    <Compile Include="Browser\core\Generated\nsIEmbeddingSiteWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIEncodedChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIEntityConverter.cs" />
+    <Compile Include="Browser\core\Generated\nsIEntropyCollector.cs" />
+    <Compile Include="Browser\core\Generated\nsIEnumerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIEnvironment.cs" />
+    <Compile Include="Browser\core\Generated\nsIErrorService.cs" />
+    <Compile Include="Browser\core\Generated\nsIEventListenerService.cs" />
+    <Compile Include="Browser\core\Generated\nsIEventTarget.cs" />
+    <Compile Include="Browser\core\Generated\nsIException.cs" />
+    <Compile Include="Browser\core\Generated\nsIExpatSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIExtendedExpatSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIExternalHelperAppService.cs" />
+    <Compile Include="Browser\core\Generated\nsIExternalProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIExternalProtocolService.cs" />
+    <Compile Include="Browser\core\Generated\nsIExternalSharingAppService.cs" />
+    <Compile Include="Browser\core\Generated\nsIExternalURLHandlerService.cs" />
+    <Compile Include="Browser\core\Generated\nsIFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsIFaviconService.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeed.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedElementBase.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedEntry.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedGenerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedPerson.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedProcessor.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedResultService.cs" />
+    <Compile Include="Browser\core\Generated\nsIFeedTextConstruct.cs" />
+    <Compile Include="Browser\core\Generated\nsIFile.cs" />
+    <Compile Include="Browser\core\Generated\nsIFileChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIFilePicker.cs" />
+    <Compile Include="Browser\core\Generated\nsIFileProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIFileStreams.cs" />
+    <Compile Include="Browser\core\Generated\nsIFileURL.cs" />
+    <Compile Include="Browser\core\Generated\nsIFileView.cs" />
+    <Compile Include="Browser\core\Generated\nsIFind.cs" />
+    <Compile Include="Browser\core\Generated\nsIFindService.cs" />
+    <Compile Include="Browser\core\Generated\nsIFocusManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIFontEnumerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormatConverter.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormAutoComplete.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormFillController.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormHistory.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormSigningDialog.cs" />
+    <Compile Include="Browser\core\Generated\nsIFormSubmitObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIFrameLoader.cs" />
+    <Compile Include="Browser\core\Generated\nsIFrameRequestCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIFTPChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIGConfService.cs" />
+    <Compile Include="Browser\core\Generated\nsIGenKeypairInfoDlg.cs" />
+    <Compile Include="Browser\core\Generated\nsIGeolocationProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIGfxInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIGfxInfoDebug.cs" />
+    <Compile Include="Browser\core\Generated\nsIGIOService.cs" />
+    <Compile Include="Browser\core\Generated\nsIGlobalHistory2.cs" />
+    <Compile Include="Browser\core\Generated\nsIGnomeVFSService.cs" />
+    <Compile Include="Browser\core\Generated\nsIGSettingsService.cs" />
+    <Compile Include="Browser\core\Generated\nsIHandlerService.cs" />
+    <Compile Include="Browser\core\Generated\nsIHapticFeedback.cs" />
+    <Compile Include="Browser\core\Generated\nsIHashable.cs" />
+    <Compile Include="Browser\core\Generated\nsIHelperAppLauncherDialog.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLAbsPosEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLInlineTableEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLMenu.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLObjectResizeListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTMLObjectResizer.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpActivityObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpAuthenticableChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpAuthenticator.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpAuthManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpChannelAuthProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpChannelChild.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpChannelInternal.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpEventSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTTPHeaderListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpHeaderVisitor.cs" />
+    <Compile Include="Browser\core\Generated\nsIHTTPIndex.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIHttpServer.cs" />
+    <Compile Include="Browser\core\Generated\nsIIconURI.cs" />
+    <Compile Include="Browser\core\Generated\nsIIdentityInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIIdleObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIIdleService.cs" />
+    <Compile Include="Browser\core\Generated\nsIIDNService.cs" />
+    <Compile Include="Browser\core\Generated\nsIIFrameBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIImageDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIImageLoadingContent.cs" />
+    <Compile Include="Browser\core\Generated\nsIIMEPicker.cs" />
+    <Compile Include="Browser\core\Generated\nsIIncrementalDownload.cs" />
+    <Compile Include="Browser\core\Generated\nsIINIParser.cs" />
+    <Compile Include="Browser\core\Generated\nsIInlineEventHandlers.cs" />
+    <Compile Include="Browser\core\Generated\nsIInlineSpellChecker.cs" />
+    <Compile Include="Browser\core\Generated\nsIInputListAutoComplete.cs" />
+    <Compile Include="Browser\core\Generated\nsIInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIInputStreamChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIInputStreamPump.cs" />
+    <Compile Include="Browser\core\Generated\nsIInputStreamTee.cs" />
+    <Compile Include="Browser\core\Generated\nsIInterfaceInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIInterfaceInfoManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIInterfaceRequestor.cs" />
+    <Compile Include="Browser\core\Generated\nsIIOService.cs" />
+    <Compile Include="Browser\core\Generated\nsIIOService2.cs" />
+    <Compile Include="Browser\core\Generated\nsIIOUtil.cs" />
+    <Compile Include="Browser\core\Generated\nsIJARChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIJARProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIJARURI.cs" />
+    <Compile Include="Browser\core\Generated\nsIJSInspector.cs" />
+    <Compile Include="Browser\core\Generated\nsIJSON.cs" />
+    <Compile Include="Browser\core\Generated\nsIJSRuntimeService.cs" />
+    <Compile Include="Browser\core\Generated\nsIJumpListBuilder.cs" />
+    <Compile Include="Browser\core\Generated\nsIJumpListItem.cs" />
+    <Compile Include="Browser\core\Generated\nsIKeygenThread.cs" />
+    <Compile Include="Browser\core\Generated\nsIKeyModule.cs" />
+    <Compile Include="Browser\core\Generated\nsILayoutDebuggingTools.cs" />
+    <Compile Include="Browser\core\Generated\nsILayoutRegressionTester.cs" />
+    <Compile Include="Browser\core\Generated\nsILineInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIListBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsILoadContext.cs" />
+    <Compile Include="Browser\core\Generated\nsILoadContextInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsILoadGroup.cs" />
+    <Compile Include="Browser\core\Generated\nsILoadInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsILocale.cs" />
+    <Compile Include="Browser\core\Generated\nsILocaleService.cs" />
+    <Compile Include="Browser\core\Generated\nsILocalFile.cs" />
+    <Compile Include="Browser\core\Generated\nsILocalFileMac.cs" />
+    <Compile Include="Browser\core\Generated\nsILocalFileWin.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginManager.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginManagerCrypto.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginManagerPrompter.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginManagerStorage.cs" />
+    <Compile Include="Browser\core\Generated\nsILoginMetaInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIMacDockSupport.cs" />
+    <Compile Include="Browser\core\Generated\nsIMacShellService.cs" />
+    <Compile Include="Browser\core\Generated\nsIMacUtils.cs" />
+    <Compile Include="Browser\core\Generated\nsIMarkupDocumentViewer.cs" />
+    <Compile Include="Browser\core\Generated\nsIMemory.cs" />
+    <Compile Include="Browser\core\Generated\nsIMemoryReporter.cs" />
+    <Compile Include="Browser\core\Generated\nsIMenuBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIMenuBuilder.cs" />
+    <Compile Include="Browser\core\Generated\nsIMessageManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIMIMEHeaderParam.cs" />
+    <Compile Include="Browser\core\Generated\nsIMIMEInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIMIMEInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIMIMEService.cs" />
+    <Compile Include="Browser\core\Generated\nsIMobileCellInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIMobileConnectionInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIMobileConnectionProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIMobileMessageCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIMobileNetworkInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIModule.cs" />
+    <Compile Include="Browser\core\Generated\nsIMozBrowserFrame.cs" />
+    <Compile Include="Browser\core\Generated\nsIMozSAXXMLDeclarationHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIMultiPartChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIMultiplexInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIMutable.cs" />
+    <Compile Include="Browser\core\Generated\nsIMutableArray.cs" />
+    <Compile Include="Browser\core\Generated\nsINativeAppSupport.cs" />
+    <Compile Include="Browser\core\Generated\nsINavBookmarksService.cs" />
+    <Compile Include="Browser\core\Generated\nsINavHistoryService.cs" />
+    <Compile Include="Browser\core\Generated\nsINeighboringCellInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsINestedURI.cs" />
+    <Compile Include="Browser\core\Generated\nsINetAddr.cs" />
+    <Compile Include="Browser\core\Generated\nsINetUtil.cs" />
+    <Compile Include="Browser\core\Generated\nsINetworkLinkService.cs" />
+    <Compile Include="Browser\core\Generated\nsINetworkManager.cs" />
+    <Compile Include="Browser\core\Generated\nsINetworkService.cs" />
+    <Compile Include="Browser\core\Generated\nsINSSCertCache.cs" />
+    <Compile Include="Browser\core\Generated\nsINSSErrorsService.cs" />
+    <Compile Include="Browser\core\Generated\nsIObjectInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIObjectLoadingContent.cs" />
+    <Compile Include="Browser\core\Generated\nsIObjectOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIObserverService.cs" />
+    <Compile Include="Browser\core\Generated\nsIOfflineCacheUpdate.cs" />
+    <Compile Include="Browser\core\Generated\nsIOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIParentalControlsService.cs" />
+    <Compile Include="Browser\core\Generated\nsIParentChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIParentRedirectingChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIParserUtils.cs" />
+    <Compile Include="Browser\core\Generated\nsIPermission.cs" />
+    <Compile Include="Browser\core\Generated\nsIPermissionManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIPersistentProperties2.cs" />
+    <Compile Include="Browser\core\Generated\nsIPhonetic.cs" />
+    <Compile Include="Browser\core\Generated\nsIPipe.cs" />
+    <Compile Include="Browser\core\Generated\nsIPK11Token.cs" />
+    <Compile Include="Browser\core\Generated\nsIPK11TokenDB.cs" />
+    <Compile Include="Browser\core\Generated\nsIPKCS11.cs" />
+    <Compile Include="Browser\core\Generated\nsIPKCS11Module.cs" />
+    <Compile Include="Browser\core\Generated\nsIPKCS11ModuleDB.cs" />
+    <Compile Include="Browser\core\Generated\nsIPKCS11Slot.cs" />
+    <Compile Include="Browser\core\Generated\nsIPKIParamBlock.cs" />
+    <Compile Include="Browser\core\Generated\nsIPlaintextEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsIPluginDocument.cs" />
+    <Compile Include="Browser\core\Generated\nsIPluginHost.cs" />
+    <Compile Include="Browser\core\Generated\nsIPluginInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIPluginInstanceOwner.cs" />
+    <Compile Include="Browser\core\Generated\nsIPluginTag.cs" />
+    <Compile Include="Browser\core\Generated\nsIPopupBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIPopupWindowManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefBranch.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefBranch2.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefBranchInternal.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefetchService.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefLocalizedString.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrefService.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrincipal.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintingPrompt.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintingPromptService.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintOptions.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintPreviewNavigation.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintProgress.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintProgressParams.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintSession.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintSettings.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintSettingsService.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintSettingsWin.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrintStatusFeedback.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrivacyTransitionObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIProcess.cs" />
+    <Compile Include="Browser\core\Generated\nsIProfileMigrator.cs" />
+    <Compile Include="Browser\core\Generated\nsIProfiler.cs" />
+    <Compile Include="Browser\core\Generated\nsIProfileUnlocker.cs" />
+    <Compile Include="Browser\core\Generated\nsIProgrammingLanguage.cs" />
+    <Compile Include="Browser\core\Generated\nsIProgressEventSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIPrompt.cs" />
+    <Compile Include="Browser\core\Generated\nsIPromptFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsIPromptService.cs" />
+    <Compile Include="Browser\core\Generated\nsIPromptService2.cs" />
+    <Compile Include="Browser\core\Generated\nsIProperties.cs" />
+    <Compile Include="Browser\core\Generated\nsIProperty.cs" />
+    <Compile Include="Browser\core\Generated\nsIPropertyBag.cs" />
+    <Compile Include="Browser\core\Generated\nsIPropertyBag2.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtectedAuthThread.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtocolProxyCallback.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtocolProxyFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtocolProxyService.cs" />
+    <Compile Include="Browser\core\Generated\nsIProtocolProxyService2.cs" />
+    <Compile Include="Browser\core\Generated\nsIProxiedChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIProxiedProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIProxyInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIQueryContentEventResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIRadioInterfaceLayer.cs" />
+    <Compile Include="Browser\core\Generated\nsIRandomGenerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFCompositeDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFContainerUtils.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFDelegateFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFInferDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFInMemoryDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFLiteral.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFNode.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFPropagatableDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFPurgeableDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFRemoteDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFResource.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFService.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFXMLParser.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFXMLSerializer.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFXMLSink.cs" />
+    <Compile Include="Browser\core\Generated\nsIRDFXMLSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIReadConfig.cs" />
+    <Compile Include="Browser\core\Generated\nsIRedirectChannelRegistrar.cs" />
+    <Compile Include="Browser\core\Generated\nsIRedirectResultListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIReflowObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIRefreshURI.cs" />
+    <Compile Include="Browser\core\Generated\nsIRelativeFilePref.cs" />
+    <Compile Include="Browser\core\Generated\nsIRemoteService.cs" />
+    <Compile Include="Browser\core\Generated\nsIRequest.cs" />
+    <Compile Include="Browser\core\Generated\nsIRequestObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIRequestObserverProxy.cs" />
+    <Compile Include="Browser\core\Generated\nsIResProtocolHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsIResumableChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIRunnable.cs" />
+    <Compile Include="Browser\core\Generated\nsISafeOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsISample.cs" />
+    <Compile Include="Browser\core\Generated\nsISaveAsCharset.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXAttributes.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXContentHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXDTDHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXErrorHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXLexicalHandler.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXLocator.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXMutableAttributes.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXXMLFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsISAXXMLReader.cs" />
+    <Compile Include="Browser\core\Generated\nsIScreen.cs" />
+    <Compile Include="Browser\core\Generated\nsIScreenManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableBase64Encoder.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableDateFormat.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableRegion.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableUConv.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptableUnescapeHTML.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptError.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptLoaderObserver.cs" />
+    <Compile Include="Browser\core\Generated\nsIScriptSecurityManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIScrollable.cs" />
+    <Compile Include="Browser\core\Generated\nsIScrollBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsISecretDecoderRing.cs" />
+    <Compile Include="Browser\core\Generated\nsISecureBrowserUI.cs" />
+    <Compile Include="Browser\core\Generated\nsISecurityEventSink.cs" />
+    <Compile Include="Browser\core\Generated\nsISecurityInfoProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsISecurityWarningDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsISeekableStream.cs" />
+    <Compile Include="Browser\core\Generated\nsISelection.cs" />
+    <Compile Include="Browser\core\Generated\nsISelectionController.cs" />
+    <Compile Include="Browser\core\Generated\nsISelectionDisplay.cs" />
+    <Compile Include="Browser\core\Generated\nsISelectionListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISelectionPrivate.cs" />
+    <Compile Include="Browser\core\Generated\nsISemanticUnitScanner.cs" />
+    <Compile Include="Browser\core\Generated\nsISerializable.cs" />
+    <Compile Include="Browser\core\Generated\nsISerializationHelper.cs" />
+    <Compile Include="Browser\core\Generated\nsIServerSocket.cs" />
+    <Compile Include="Browser\core\Generated\nsIServiceManager.cs" />
+    <Compile Include="Browser\core\Generated\nsISessionStartup.cs" />
+    <Compile Include="Browser\core\Generated\nsISessionStore.cs" />
+    <Compile Include="Browser\core\Generated\nsISHContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIShellService.cs" />
+    <Compile Include="Browser\core\Generated\nsISHEntry.cs" />
+    <Compile Include="Browser\core\Generated\nsISHistory.cs" />
+    <Compile Include="Browser\core\Generated\nsISHistoryInternal.cs" />
+    <Compile Include="Browser\core\Generated\nsISHistoryListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISHTransaction.cs" />
+    <Compile Include="Browser\core\Generated\nsISimpleEnumerator.cs" />
+    <Compile Include="Browser\core\Generated\nsISimpleStreamListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISimpleTest.cs" />
+    <Compile Include="Browser\core\Generated\nsISimpleUnicharStreamFactory.cs" />
+    <Compile Include="Browser\core\Generated\nsISliderListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISmsService.cs" />
+    <Compile Include="Browser\core\Generated\nsISocketProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsISocketProviderService.cs" />
+    <Compile Include="Browser\core\Generated\nsISocketTransport.cs" />
+    <Compile Include="Browser\core\Generated\nsISocketTransportService.cs" />
+    <Compile Include="Browser\core\Generated\nsISOCKSSocketInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsISound.cs" />
+    <Compile Include="Browser\core\Generated\nsISSLErrorListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISSLSocketControl.cs" />
+    <Compile Include="Browser\core\Generated\nsISSLStatus.cs" />
+    <Compile Include="Browser\core\Generated\nsISSLStatusProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIStandaloneNativeMenu.cs" />
+    <Compile Include="Browser\core\Generated\nsIStandardURL.cs" />
+    <Compile Include="Browser\core\Generated\nsIStartupCache.cs" />
+    <Compile Include="Browser\core\Generated\nsIStorageStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamBufferAccess.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamCipher.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamConverter.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamConverterService.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamListenerTee.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamLoader.cs" />
+    <Compile Include="Browser\core\Generated\nsIStreamTransportService.cs" />
+    <Compile Include="Browser\core\Generated\nsIStringBundle.cs" />
+    <Compile Include="Browser\core\Generated\nsIStringBundleOverride.cs" />
+    <Compile Include="Browser\core\Generated\nsIStringEnumerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIStringStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIStructuredCloneContainer.cs" />
+    <Compile Include="Browser\core\Generated\nsIStyleSheetService.cs" />
+    <Compile Include="Browser\core\Generated\nsISupports.cs" />
+    <Compile Include="Browser\core\Generated\nsISupportsArray.cs" />
+    <Compile Include="Browser\core\Generated\nsISupportsIterators.cs" />
+    <Compile Include="Browser\core\Generated\nsISupportsPrimitives.cs" />
+    <Compile Include="Browser\core\Generated\nsISupportsPriority.cs" />
+    <Compile Include="Browser\core\Generated\nsISyncJPAKE.cs" />
+    <Compile Include="Browser\core\Generated\nsISyncStreamListener.cs" />
+    <Compile Include="Browser\core\Generated\nsISystemProxySettings.cs" />
+    <Compile Include="Browser\core\Generated\nsITabChild.cs" />
+    <Compile Include="Browser\core\Generated\nsITableEditor.cs" />
+    <Compile Include="Browser\core\Generated\nsITabParent.cs" />
+    <Compile Include="Browser\core\Generated\nsITaggingService.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarOverlayIconController.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarPreview.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarPreviewButton.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarPreviewController.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarProgress.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarTabPreview.cs" />
+    <Compile Include="Browser\core\Generated\nsITaskbarWindowPreview.cs" />
+    <Compile Include="Browser\core\Generated\nsITelemetry.cs" />
+    <Compile Include="Browser\core\Generated\nsITextScroll.cs" />
+    <Compile Include="Browser\core\Generated\nsITextServicesFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsITextToSubURI.cs" />
+    <Compile Include="Browser\core\Generated\nsIThread.cs" />
+    <Compile Include="Browser\core\Generated\nsIThreadInternal.cs" />
+    <Compile Include="Browser\core\Generated\nsIThreadManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIThreadPool.cs" />
+    <Compile Include="Browser\core\Generated\nsITimedChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsITimer.cs" />
+    <Compile Include="Browser\core\Generated\nsITokenDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsITokenPasswordDialogs.cs" />
+    <Compile Include="Browser\core\Generated\nsIToolkitChromeRegistry.cs" />
+    <Compile Include="Browser\core\Generated\nsIToolkitProfile.cs" />
+    <Compile Include="Browser\core\Generated\nsIToolkitProfileService.cs" />
+    <Compile Include="Browser\core\Generated\nsITooltipListener.cs" />
+    <Compile Include="Browser\core\Generated\nsITooltipTextProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsITraceableChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsITransaction.cs" />
+    <Compile Include="Browser\core\Generated\nsITransactionList.cs" />
+    <Compile Include="Browser\core\Generated\nsITransactionListener.cs" />
+    <Compile Include="Browser\core\Generated\nsITransactionManager.cs" />
+    <Compile Include="Browser\core\Generated\nsITransfer.cs" />
+    <Compile Include="Browser\core\Generated\nsITransferable.cs" />
+    <Compile Include="Browser\core\Generated\nsITransport.cs" />
+    <Compile Include="Browser\core\Generated\nsITransportSecurityInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsITreeBoxObject.cs" />
+    <Compile Include="Browser\core\Generated\nsITreeColumns.cs" />
+    <Compile Include="Browser\core\Generated\nsITreeContentView.cs" />
+    <Compile Include="Browser\core\Generated\nsITreeSelection.cs" />
+    <Compile Include="Browser\core\Generated\nsITreeView.cs" />
+    <Compile Include="Browser\core\Generated\nsITXTToHTMLConv.cs" />
+    <Compile Include="Browser\core\Generated\nsITypeAheadFind.cs" />
+    <Compile Include="Browser\core\Generated\nsIUnicharInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIUnicharLineInputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIUnicharOutputStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIUnicharStreamLoader.cs" />
+    <Compile Include="Browser\core\Generated\nsIUnicodeNormalizer.cs" />
+    <Compile Include="Browser\core\Generated\nsIUpdateService.cs" />
+    <Compile Include="Browser\core\Generated\nsIUpdateTimerManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIUploadChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIUploadChannel2.cs" />
+    <Compile Include="Browser\core\Generated\nsIURI.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIChecker.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIClassifier.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIContentListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIFixup.cs" />
+    <Compile Include="Browser\core\Generated\nsIURILoader.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIRefObject.cs" />
+    <Compile Include="Browser\core\Generated\nsIURIWithPrincipal.cs" />
+    <Compile Include="Browser\core\Generated\nsIURL.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierDBService.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierHashCompleter.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierPrefixSet.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierStreamUpdater.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierTable.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlClassifierUtils.cs" />
+    <Compile Include="Browser\core\Generated\nsIURLFormatter.cs" />
+    <Compile Include="Browser\core\Generated\nsIUrlListManager.cs" />
+    <Compile Include="Browser\core\Generated\nsIURLParser.cs" />
+    <Compile Include="Browser\core\Generated\nsIUserCertPicker.cs" />
+    <Compile Include="Browser\core\Generated\nsIUserInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIUTF8ConverterService.cs" />
+    <Compile Include="Browser\core\Generated\nsIUUIDGenerator.cs" />
+    <Compile Include="Browser\core\Generated\nsIVariant.cs" />
+    <Compile Include="Browser\core\Generated\nsIVersionComparator.cs" />
+    <Compile Include="Browser\core\Generated\nsIViewSourceChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIWeakReference.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowser.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserChrome.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserChrome2.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserChrome3.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserChromeFocus.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserFind.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserFocus.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserPersist.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserPrint.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserSetup.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebBrowserStream.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebContentConverterRegistrar.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebContentHandlerRegistrar.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebNavigation.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebNavigationInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebPageDescriptor.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebProgress.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebProgressListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebProgressListener2.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebSocketChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIWebSocketListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIWifi.cs" />
+    <Compile Include="Browser\core\Generated\nsIWifiAccessPoint.cs" />
+    <Compile Include="Browser\core\Generated\nsIWifiListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIWifiMonitor.cs" />
+    <Compile Include="Browser\core\Generated\nsIWinAppHelper.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowCreator.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowCreator2.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowDataSource.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowMediator.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowMediatorListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowsRegKey.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowsShellService.cs" />
+    <Compile Include="Browser\core\Generated\nsIWindowWatcher.cs" />
+    <Compile Include="Browser\core\Generated\nsIWinTaskbar.cs" />
+    <Compile Include="Browser\core\Generated\nsIWorkerHolder.cs" />
+    <Compile Include="Browser\core\Generated\nsIWorkerTest.cs" />
+    <Compile Include="Browser\core\Generated\nsIWritablePropertyBag.cs" />
+    <Compile Include="Browser\core\Generated\nsIWritablePropertyBag2.cs" />
+    <Compile Include="Browser\core\Generated\nsIWyciwygChannel.cs" />
+    <Compile Include="Browser\core\Generated\nsIX509Cert.cs" />
+    <Compile Include="Browser\core\Generated\nsIX509CertDB.cs" />
+    <Compile Include="Browser\core\Generated\nsIX509CertList.cs" />
+    <Compile Include="Browser\core\Generated\nsIX509CertValidity.cs" />
+    <Compile Include="Browser\core\Generated\nsIXBLAccessible.cs" />
+    <Compile Include="Browser\core\Generated\nsIXMLHttpRequest.cs" />
+    <Compile Include="Browser\core\Generated\nsIXPConnect.cs" />
+    <Compile Include="Browser\core\Generated\nsIXPCScriptable.cs" />
+    <Compile Include="Browser\core\Generated\nsIXSLTException.cs" />
+    <Compile Include="Browser\core\Generated\nsIXSLTProcessor.cs" />
+    <Compile Include="Browser\core\Generated\nsIXSLTProcessorPrivate.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULAppInfo.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULBrowserWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULBuilderListener.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULContextMenuBuilder.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULOverlayProvider.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULRuntime.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULSortService.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULTemplateBuilder.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULTemplateQueryProcessor.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULTemplateResult.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULTemplateRuleFilter.cs" />
+    <Compile Include="Browser\core\Generated\nsIXULWindow.cs" />
+    <Compile Include="Browser\core\Generated\nsIZipReader.cs" />
+    <Compile Include="Browser\core\Generated\nsIZipWriter.cs" />
+    <Compile Include="Browser\core\Generated\nsPICommandUpdater.cs" />
+    <Compile Include="Browser\core\Generated\nsPIDNSService.cs" />
+    <Compile Include="Browser\core\Generated\nsPIEditorTransaction.cs" />
+    <Compile Include="Browser\core\Generated\nsPIPlacesDatabase.cs" />
+    <Compile Include="Browser\core\Generated\nsPIPlacesHistoryListenersNotifier.cs" />
+    <Compile Include="Browser\core\Generated\nsPIPromptService.cs" />
+    <Compile Include="Browser\core\Generated\nsPISocketTransportService.cs" />
+    <Compile Include="Browser\core\Generated\nsPIWidgetCocoa.cs" />
+    <Compile Include="Browser\core\Generated\nsPIWindowWatcher.cs" />
+    <Compile Include="Browser\core\Generated\nspluginroot.cs" />
+    <Compile Include="Browser\core\Generated\nsrootidl.cs" />
+    <Compile Include="Browser\core\Generated\rdfIDataSource.cs" />
+    <Compile Include="Browser\core\Generated\rdfISerializer.cs" />
+    <Compile Include="Browser\core\Generated\rdfITripleVisitor.cs" />
+    <Compile Include="Browser\core\Generated\TestScriptable.cs" />
+    <Compile Include="Browser\core\Generated\txIEXSLTRegExFunctions.cs" />
+    <Compile Include="Browser\core\Generated\txIFunctionEvaluationContext.cs" />
+    <Compile Include="Browser\core\Generated\txINodeSet.cs" />
+    <Compile Include="Browser\core\Generated\txIXPathObject.cs" />
+    <Compile Include="Browser\core\Generated\xpccomponents.cs" />
+    <Compile Include="Browser\core\Generated\xpcexception.cs" />
+    <Compile Include="Browser\core\Generated\xpcIJSGetFactory.cs" />
+    <Compile Include="Browser\core\Generated\xpcIJSModuleLoader.cs" />
+    <Compile Include="Browser\core\Generated\xpcIJSWeakReference.cs" />
+    <Compile Include="Browser\core\Generated\xpcjsid.cs" />
+    <Compile Include="Browser\core\Generated\xpctest_attributes.cs" />
+    <Compile Include="Browser\core\Generated\xpctest_interfaces.cs" />
+    <Compile Include="Browser\core\GlobalJSContextHolder.cs" />
+    <Compile Include="Browser\core\ImageCreator.cs" />
+    <Compile Include="Browser\core\Images\ImageContainer.cs" />
+    <Compile Include="Browser\core\Interfaces\IGeckoWebBrowser.cs" />
+    <Compile Include="Browser\core\Interop\ClassInfo.cs" />
+    <Compile Include="Browser\core\Interop\ComDebug.cs" />
+    <Compile Include="Browser\core\Interop\COMGC.cs" />
+    <Compile Include="Browser\core\Interop\ComPtr.cs" />
+    <Compile Include="Browser\core\Interop\ExceptionTranslator.cs" />
+    <Compile Include="Browser\core\Interop\ExtensionMethods.cs" />
+    <Compile Include="Browser\core\Interop\HandWrittenInterfaces\nsIDOMScriptObjectFactory.cs" />
+    <Compile Include="Browser\core\Interop\HandWrittenInterfaces\nsIScriptContext.cs" />
+    <Compile Include="Browser\core\Interop\HandWrittenInterfaces\nsIXPathResult.cs" />
+    <Compile Include="Browser\core\Interop\MemCopy.cs" />
+    <Compile Include="Browser\core\Interop\nsWeakReference.cs" />
+    <Compile Include="Browser\core\Interop\SimpleNameMaps.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\JSAutoCompartment.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\JSBool.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\JSPrincipals.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\JsType.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\JsVal.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\MutableHandle.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\MutableJSVal.cs" />
+    <Compile Include="Browser\core\Interop\SpiderMonkey\SpiderMonkey.cs" />
+    <Compile Include="Browser\core\IOService.cs" />
+    <Compile Include="Browser\core\IO\InputStream.cs" />
+    <Compile Include="Browser\core\IO\InputStreamTee.cs" />
+    <Compile Include="Browser\core\IO\MimeInputStream.cs" />
+    <Compile Include="Browser\core\IO\Native\BaseNativeInputStream.cs" />
+    <Compile Include="Browser\core\IO\Native\BaseNativeStream.cs" />
+    <Compile Include="Browser\core\IO\Native\NativeInputStream.cs" />
+    <Compile Include="Browser\core\IO\Native\NativeOutputStream.cs" />
+    <Compile Include="Browser\core\IO\OutputStream.cs" />
+    <Compile Include="Browser\core\IO\ScriptableInputStream.cs" />
+    <Compile Include="Browser\core\IO\StorageStream.cs" />
+    <Compile Include="Browser\core\IO\StringInputStream.cs" />
+    <Compile Include="Browser\core\IO\WrapperInputStream.cs" />
+    <Compile Include="Browser\core\IO\ZipReader.cs" />
+    <Compile Include="Browser\core\JavascriptErrorEventArgs.cs" />
+    <Compile Include="Browser\core\JQuery\JQueryExecutor.cs" />
+    <Compile Include="Browser\core\Listeners\GeckoBaseListener.cs" />
+    <Compile Include="Browser\core\Listeners\GeckoDOMEventListener.cs" />
+    <Compile Include="Browser\core\Listeners\GeckoSHistoryListener.cs" />
+    <Compile Include="Browser\core\Listeners\GeckoWebProgressListener.cs" />
+    <Compile Include="Browser\core\Net\AsyncStreamCopier.cs" />
+    <Compile Include="Browser\core\Net\Channel.cs" />
+    <Compile Include="Browser\core\Net\CookieManager.cs" />
+    <Compile Include="Browser\core\Net\DnsRecord.cs" />
+    <Compile Include="Browser\core\Net\DnsService.cs" />
+    <Compile Include="Browser\core\Net\HttpActivityDistributor.cs" />
+    <Compile Include="Browser\core\Net\HttpChannel.cs" />
+    <Compile Include="Browser\core\Net\ImgRequest.cs" />
+    <Compile Include="Browser\core\Net\IncrementalDownload.cs" />
+    <Compile Include="Browser\core\Net\LoadGroup.cs" />
+    <Compile Include="Browser\core\Net\Request.cs" />
+    <Compile Include="Browser\core\Net\RequestObserver.cs" />
+    <Compile Include="Browser\core\Net\StreamListenerTee.cs" />
+    <Compile Include="Browser\core\Net\UploadChannel.cs" />
+    <Compile Include="Browser\core\Net\UriChecker.cs" />
+    <Compile Include="Browser\core\nsCancelable.cs" />
+    <Compile Include="Browser\core\nsInterfaces.cs" />
+    <Compile Include="Browser\core\NSSErrors.cs" />
+    <Compile Include="Browser\core\nsString.cs" />
+    <Compile Include="Browser\core\NsSupportsBase.cs" />
+    <Compile Include="Browser\core\nsSupportsPrimitives.cs" />
+    <Compile Include="Browser\core\ObserverNotifications.cs" />
+    <Compile Include="Browser\core\Observers\BaseHttpModifyRequestObserver.cs" />
+    <Compile Include="Browser\core\Observers\BaseHttpRequestResponceObserver.cs" />
+    <Compile Include="Browser\core\Observers\ObserverService.cs" />
+    <Compile Include="Browser\core\Pipe.cs" />
+    <Compile Include="Browser\core\Plugins\PluginHost.cs" />
+    <Compile Include="Browser\core\Plugins\PluginTag.cs" />
+    <Compile Include="Browser\core\PrintSettings.cs" />
+    <Compile Include="Browser\core\PrivateBrowsingService.cs" />
+    <Compile Include="Browser\core\PromptService.cs" />
+    <Compile Include="Browser\core\Properties.cs" />
+    <Compile Include="Browser\core\ScreenManager.cs" />
+    <Compile Include="Browser\core\Search\BrowserSearchService.cs" />
+    <Compile Include="Browser\core\Search\SearchEngine.cs" />
+    <Compile Include="Browser\core\Search\SearchSubmission.cs" />
+    <Compile Include="Browser\core\Services\AppShellService.cs" />
+    <Compile Include="Browser\core\Services\CategoryManager.cs" />
+    <Compile Include="Browser\core\Services\CertOverride.cs" />
+    <Compile Include="Browser\core\Services\CertOverrideService.cs" />
+    <Compile Include="Browser\core\Services\ConsoleService.cs" />
+    <Compile Include="Browser\core\Services\RandomGenerator.cs" />
+    <Compile Include="Browser\core\Services\SSLStatus.cs" />
+    <Compile Include="Browser\core\Services\VersionComparator.cs" />
+    <Compile Include="Browser\core\Services\WindowWatcher.cs" />
+    <Compile Include="Browser\core\Services\XulRuntime.cs" />
+    <Compile Include="Browser\core\Sound.cs" />
+    <Compile Include="Browser\core\TreeView.cs" />
+    <Compile Include="Browser\core\Utils\VersionComparer.cs" />
+    <Compile Include="Browser\core\Variant.cs" />
+    <Compile Include="Browser\core\WebProgressListener.cs" />
+    <Compile Include="Browser\core\WiFiMonitor.cs" />
+    <Compile Include="Browser\core\WindowMediator.cs" />
+    <Compile Include="Browser\core\Windows\Api.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\JumpListBuilder.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\JumpListItem.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\JumpListLink.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\JumpListSeparator.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\JumpListShortcut.cs" />
+    <Compile Include="Browser\core\Windows\Taskbar\WinTaskbar.cs" />
+    <Compile Include="Browser\core\Xpcom.cs" />
+    <Compile Include="Browser\core\XULAppInfo.cs" />
+    <Compile Include="Browser\core\XULRunnerLocator.cs" />
+    <Compile Include="Browser\form\Dialogs\ChromeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\ChromeDialog.Designer.cs">
+      <DependentUpon>ChromeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\ConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\ConfirmDialog.Designer.cs">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\GeckoHelperAppLauncherDialog.cs" />
+    <Compile Include="Browser\form\Dialogs\PasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\PasswordDialog.Designer.cs">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\PromptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser\form\Dialogs\PromptDialog.Designer.cs">
+      <DependentUpon>PromptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser\form\DOM\GeckoElementExtensionMethods.cs" />
+    <Compile Include="Browser\form\GeckoWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Browser\form\GeckoWebBrowser.Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Browser\form\GeckoWebBrowser.WinForms.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Browser\form\GeckoWebBrowser.XULWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Browser\form\Interop\GeckoWebBrowserWeakRef.cs" />
+    <Compile Include="Browser\form\Interop\nsWeakReference.cs" />
+    <Compile Include="Browser\form\NavigateFinishedNotifier.cs" />
+    <Compile Include="Browser\form\PropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser\form\PropertiesDialog.Designer.cs">
+      <DependentUpon>PropertiesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser\form\Utils\SaveImageElement.cs" />
+    <Compile Include="Browser\form\Utils\WindowsImageCreator.cs" />
+    <Compile Include="Core\7zip\Lzma\Common\CRC.cs" />
+    <Compile Include="Core\7zip\Lzma\ICoder.cs" />
+    <Compile Include="Core\7zip\Lzma\LZMA\LzmaBase.cs" />
+    <Compile Include="Core\7zip\Lzma\LZMA\LzmaDecoder.cs" />
+    <Compile Include="Core\7zip\Lzma\LZMA\LzmaEncoder.cs" />
+    <Compile Include="Core\7zip\Lzma\LZ\IMatchFinder.cs" />
+    <Compile Include="Core\7zip\Lzma\LZ\LzBinTree.cs" />
+    <Compile Include="Core\7zip\Lzma\LZ\LzInWindow.cs" />
+    <Compile Include="Core\7zip\Lzma\LZ\LzOutWindow.cs" />
+    <Compile Include="Core\7zip\Lzma\RangeCoder\RangeCoder.cs" />
+    <Compile Include="Core\7zip\Lzma\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="Core\7zip\Lzma\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="Core\7zip\Lzma\SevenZipHelper.cs" />
+    <Compile Include="Core\7zip\SevenZipCompress.cs" />
+    <Compile Include="Core\CacheFile\DataFileIndex.cs" />
+    <Compile Include="Core\CacheFile\DataFile.cs" />
+    <Compile Include="Core\CacheFile\dbFunc.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\IndexDynamic.cs" />
+    <Compile Include="Core\CacheFile\DataHost.cs" />
+    <Compile Include="Core\CacheFile\IDataFile.cs" />
+    <Compile Include="Core\SystemExt.cs" />
+    <Compile Include="GUI\Form\FormGecko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormUserRegistry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormDataSplitConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormELSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormItemEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucTextBoxH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\IDataFieldEvent.cs" />
+    <Compile Include="GUI\UserControl\ucDataItemAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucDataSplitConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucModelFieldAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucModelFielEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucModelTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\CNDATA.cs" />
+    <Compile Include="Model\ELGRAMMAR.cs" />
+    <Compile Include="Model\ELWORD.cs" />
+    <Compile Include="Model\MENU.cs" />
+    <Compile Include="Model\USER.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\ControlKit.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\InfoSelectTop.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\dbAction.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\FieldInfo.cs" />
+    <Compile Include="Model\DB_MODEL.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\dbMsg.cs" />
+    <Compile Include="Core\CacheFile\dbType.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\EditStatus.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\IFieldInfo.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\ItemEditType.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\JoinType.cs" />
+    <Compile Include="Core\CacheFile\Serializer\ContractAttribute.cs" />
+    <Compile Include="Core\CacheFile\Serializer\MemberInfo.cs" />
+    <Compile Include="Core\CacheFile\Serializer\TypeInfo.cs" />
+    <Compile Include="Core\CacheFile\DataFileBuffer.cs" />
+    <Compile Include="Core\HtmlExt.cs" />
+    <Compile Include="Core\ComboboxItem.cs" />
+    <Compile Include="Core\dbFieldChange.cs" />
+    <Compile Include="Core\FtpClient\Extensions\GetChecksum.cs" />
+    <Compile Include="Core\FtpClient\Extensions\MD5.cs" />
+    <Compile Include="Core\FtpClient\Extensions\XCRC.cs" />
+    <Compile Include="Core\FtpClient\Extensions\XMD5.cs" />
+    <Compile Include="Core\FtpClient\Extensions\XSHA1.cs" />
+    <Compile Include="Core\FtpClient\Extensions\XSHA256.cs" />
+    <Compile Include="Core\FtpClient\Extensions\XSHA512.cs" />
+    <Compile Include="Core\FtpClient\FtpClient.cs" />
+    <Compile Include="Core\FtpClient\FtpDataStream.cs" />
+    <Compile Include="Core\FtpClient\FtpEnums.cs" />
+    <Compile Include="Core\FtpClient\FtpExceptions.cs" />
+    <Compile Include="Core\FtpClient\FtpExtensionAttribute.cs" />
+    <Compile Include="Core\FtpClient\FtpExtensions.cs" />
+    <Compile Include="Core\FtpClient\FtpHash.cs" />
+    <Compile Include="Core\FtpClient\FtpListItem.cs" />
+    <Compile Include="Core\FtpClient\FtpReply.cs" />
+    <Compile Include="Core\FtpClient\FtpSocketStream.cs" />
+    <Compile Include="Core\FtpClient\FtpTrace.cs" />
+    <Compile Include="Core\FtpClient\IFtpClient.cs" />
+    <Compile Include="Core\FtpClient\IFtpListItem.cs" />
+    <Compile Include="Core\FtpClient\IFtpReply.cs" />
+    <Compile Include="Core\HtmlAgilityPack\crc32.cs" />
+    <Compile Include="Core\HtmlAgilityPack\EncodingFoundException.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlAttribute.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlAttributeCollection.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlCmdLine.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlCommentNode.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlConsoleListener.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlDocument.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlDocument.Xpath.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlElementFlag.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlEntity.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNameTable.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNode.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNode.Xpath.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNodeCollection.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNodeNavigator.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlNodeType.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlParseError.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlParseErrorCode.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlTextNode.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlWeb.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlWeb.Xpath.cs" />
+    <Compile Include="Core\HtmlAgilityPack\HtmlWebException.cs" />
+    <Compile Include="Core\HtmlAgilityPack\IHtmlBaseNode.cs" />
+    <Compile Include="Core\HtmlAgilityPack\IOLibrary.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocument.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
+    <Compile Include="Core\HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
+    <Compile Include="Core\HtmlAgilityPack\NameValuePairList.cs" />
+    <Compile Include="Core\HtmlAgilityPack\Trace.cs" />
+    <Compile Include="Core\HtmlAgilityPack\Trace.FullFramework.cs" />
+    <Compile Include="Core\HtmlAgilityPack\Utilities.cs" />
+    <Compile Include="Core\Mustache\ArgumentCollection.cs" />
+    <Compile Include="Core\Mustache\CompoundGenerator.cs" />
+    <Compile Include="Core\Mustache\ConditionTagDefinition.cs" />
+    <Compile Include="Core\Mustache\ContentTagDefinition.cs" />
+    <Compile Include="Core\Mustache\Context.cs" />
+    <Compile Include="Core\Mustache\ContextParameter.cs" />
+    <Compile Include="Core\Mustache\EachTagDefinition.cs" />
+    <Compile Include="Core\Mustache\ElifTagDefinition.cs" />
+    <Compile Include="Core\Mustache\ElseTagDefinition.cs" />
+    <Compile Include="Core\Mustache\FormatCompiler.cs" />
+    <Compile Include="Core\Mustache\Generator.cs" />
+    <Compile Include="Core\Mustache\HtmlFormatCompiler.cs" />
+    <Compile Include="Core\Mustache\IArgument.cs" />
+    <Compile Include="Core\Mustache\IfTagDefinition.cs" />
+    <Compile Include="Core\Mustache\IGenerator.cs" />
+    <Compile Include="Core\Mustache\IndexTagDefinition.cs" />
+    <Compile Include="Core\Mustache\InlineGenerator.cs" />
+    <Compile Include="Core\Mustache\InlineTagDefinition.cs" />
+    <Compile Include="Core\Mustache\KeyFoundEventArgs.cs" />
+    <Compile Include="Core\Mustache\KeyGenerator.cs" />
+    <Compile Include="Core\Mustache\KeyNotFoundEventArgs.cs" />
+    <Compile Include="Core\Mustache\MasterTagDefinition.cs" />
+    <Compile Include="Core\Mustache\NestedContext.cs" />
+    <Compile Include="Core\Mustache\NewlineTagDefinition.cs" />
+    <Compile Include="Core\Mustache\NumberArgument.cs" />
+    <Compile Include="Core\Mustache\PlaceholderArgument.cs" />
+    <Compile Include="Core\Mustache\PlaceholderFoundEventArgs.cs" />
+    <Compile Include="Core\Mustache\PropertyDictionary.cs" />
+    <Compile Include="Core\Mustache\RegexHelper.cs" />
+    <Compile Include="Core\Mustache\Scope.cs" />
+    <Compile Include="Core\Mustache\SetTagDefinition.cs" />
+    <Compile Include="Core\Mustache\StaticGenerator.cs" />
+    <Compile Include="Core\Mustache\StringArgument.cs" />
+    <Compile Include="Core\Mustache\Substitution.cs" />
+    <Compile Include="Core\Mustache\TagDefinition.cs" />
+    <Compile Include="Core\Mustache\TagFormattedEventArgs.cs" />
+    <Compile Include="Core\Mustache\TagParameter.cs" />
+    <Compile Include="Core\Mustache\UpcastDictionary.cs" />
+    <Compile Include="Core\Mustache\ValueRequestEventArgs.cs" />
+    <Compile Include="Core\Mustache\VariableArgument.cs" />
+    <Compile Include="Core\Mustache\VariableFoundEventArgs.cs" />
+    <Compile Include="Core\Mustache\WithTagDefinition.cs" />
+    <Compile Include="Core\Mustache\_config.cs" />
+    <Compile Include="Core\Protobuf\BclHelpers.cs" />
+    <Compile Include="Core\Protobuf\BufferExtension.cs" />
+    <Compile Include="Core\Protobuf\BufferPool.cs" />
+    <Compile Include="Core\Protobuf\CallbackAttributes.cs" />
+    <Compile Include="Core\Protobuf\Compiler\CompilerContext.cs" />
+    <Compile Include="Core\Protobuf\Compiler\CompilerDelegates.cs" />
+    <Compile Include="Core\Protobuf\Compiler\Local.cs" />
+    <Compile Include="Core\Protobuf\DataFormat.cs" />
+    <Compile Include="Core\Protobuf\Extensible.cs" />
+    <Compile Include="Core\Protobuf\ExtensibleUtil.cs" />
+    <Compile Include="Core\Protobuf\GlobalSuppressions.cs" />
+    <Compile Include="Core\Protobuf\Helpers.cs" />
+    <Compile Include="Core\Protobuf\IExtensible.cs" />
+    <Compile Include="Core\Protobuf\IExtension.cs" />
+    <Compile Include="Core\Protobuf\ImplicitFields.cs" />
+    <Compile Include="Core\Protobuf\KeyValuePairProxy.cs" />
+    <Compile Include="Core\Protobuf\Meta\AttributeMap.cs" />
+    <Compile Include="Core\Protobuf\Meta\BasicList.cs" />
+    <Compile Include="Core\Protobuf\Meta\CallbackSet.cs" />
+    <Compile Include="Core\Protobuf\Meta\MetaType.cs" />
+    <Compile Include="Core\Protobuf\Meta\RuntimeTypeModel.cs" />
+    <Compile Include="Core\Protobuf\Meta\SubType.cs" />
+    <Compile Include="Core\Protobuf\Meta\TypeFormatEventArgs.cs" />
+    <Compile Include="Core\Protobuf\Meta\TypeModel.cs" />
+    <Compile Include="Core\Protobuf\Meta\ValueMember.cs" />
+    <Compile Include="Core\Protobuf\NetObjectCache.cs" />
+    <Compile Include="Core\Protobuf\PrefixStyle.cs" />
+    <Compile Include="Core\Protobuf\ProtoContractAttribute.cs" />
+    <Compile Include="Core\Protobuf\ProtoEnumAttribute.cs" />
+    <Compile Include="Core\Protobuf\ProtoException.cs" />
+    <Compile Include="Core\Protobuf\ProtoIgnoreAttribute.cs" />
+    <Compile Include="Core\Protobuf\ProtoIncludeAttribute.cs" />
+    <Compile Include="Core\Protobuf\ProtoMemberAttribute.cs" />
+    <Compile Include="Core\Protobuf\ProtoReader.cs" />
+    <Compile Include="Core\Protobuf\ProtoWriter.cs" />
+    <Compile Include="Core\Protobuf\SerializationContext.cs" />
+    <Compile Include="Core\Protobuf\Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ArrayDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\BlobSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\BooleanSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ByteSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\CharSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\CompiledSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\DateTimeSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\DecimalSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\DefaultValueDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\DoubleSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\EnumSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\FieldDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\GuidSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ImmutableCollectionDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\Int16Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\Int32Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\Int64Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\IProtoSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\IProtoTypeSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ISerializerProxy.cs" />
+    <Compile Include="Core\Protobuf\Serializers\KeyValuePairDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ListDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\MemberSpecifiedDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\NetObjectSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\NullDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ParseableSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\PropertyDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\ProtoDecoratorBase.cs" />
+    <Compile Include="Core\Protobuf\Serializers\SByteSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\SingleSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\StringSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\SubItemSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\SurrogateSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\SystemTypeSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\TagDecorator.cs" />
+    <Compile Include="Core\Protobuf\Serializers\TimeSpanSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\TupleSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\TypeSerializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\UInt64Serializer.cs" />
+    <Compile Include="Core\Protobuf\Serializers\UriDecorator.cs" />
+    <Compile Include="Core\Protobuf\SubItemToken.cs" />
+    <Compile Include="Core\Protobuf\WireType.cs" />
+    <Compile Include="Core\CacheFile\Serializer\MemberAttribute.cs" />
+    <Compile Include="Core\CacheFile\Serializer\Serializer.cs" />
+    <Compile Include="Core\CacheFile\Serializer\TypeCache.cs" />
+    <Compile Include="Core\CacheFile\Serializer\EnKnownType.cs" />
+    <Compile Include="Core\CacheFile\Serializer\EnMemberType.cs" />
+    <Compile Include="Core\CacheFile\Serializer\PrimitivesConvertion.cs" />
+    <Compile Include="Core\CacheFile\Serializer\ReflectionHelper.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\SearchConfig.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\SearchRequest.cs" />
+    <Compile Include="Core\CacheFile\Interfaces\SearchResult.cs" />
+    <Compile Include="GUI\Controls\ButtonCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\AddNewColorSwatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorConverter.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorDragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorFieldPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorRenderingHelper.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSelectedEventArgs.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorSpaceComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorSpaceComponentEventHandler.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSpaceComponentTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorSpaceEventHandler.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSwatch.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSwatchPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ColorSwatchSelectedHandler.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ColorSwatchXml.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\ComponentTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\ComponentUnit.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\DragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\HexTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\HSB.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\HsbColorSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\IColorSpaceStructure.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\Caret.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\Gdi32.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\HitTestValues.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\ImageCapture.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\ImageManipulation.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\ImageManipulationException.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\RasterOperationCodes.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\Resources.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\ShowWindowMessages.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\Trace.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\User32.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\Window.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\Sano.Utility\WindowsMessages.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\RGB.cs" />
+    <Compile Include="GUI\Controls\ColorPicker\RgbColorSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ColorPicker\___Const_ColorPicker.cs" />
+    <Compile Include="GUI\Controls\ComboBox\ColorComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ComboBox\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ComboBox\OldNewEvent.cs" />
+    <Compile Include="GUI\Controls\ComboBox\PopupControl.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\WebButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\WordButton.cs" />
+    <Compile Include="GUI\Controls\SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\SplitButton.designer.cs">
+      <DependentUpon>SplitButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\BoldButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\ForecolorButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\IHTMLEditorButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\InsertLinkedImageButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\ItalicButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\JustifyCenterButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\JustifyLeftButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\JustifyRightButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\LinkButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\OrderedListButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\PredefinedButtonSets.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\UnderlineButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\UnlinkButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\Buttons\UnorderedListButton.cs" />
+    <Compile Include="GUI\Controls\HtmlEditor\HtmlEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\HtmlEditor\HtmlEditor.designer.cs">
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\HtmlEditor\___HtmlEditorResource.cs" />
+    <Compile Include="GUI\Controls\TextBoxCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ListView\ListViewModelItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ListView\CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ListView\Scrollbar\CustomScrollbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\ListView\Scrollbar\ICustomScrollbar.cs" />
+    <Compile Include="GUI\Controls\ListView\Scrollbar\ScrollbarCollector.cs" />
+    <Compile Include="GUI\Controls\ListView\Scrollbar\ScrollbarStyleHelper.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\ButtonPainters.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\Painter.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\PainterFilterNoText.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\PainterFilterSize.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\StackedPainters.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\SymbolPainter.cs" />
+    <Compile Include="GUI\Controls\ListView\Painters\WindowsStyledButtonPainter.cs" />
+    <Compile Include="GUI\Controls\TabControlCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl\ucDataItemEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormLookupItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormColorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormItemAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormModelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormModelAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form\FormNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Controls\TabPageCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\CNSPLIT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\SystemTray.cs" />
+    <Compile Include="Run.cs" />
+    <Compile Include="System\ConcurrentDictionary.cs" />
+    <Compile Include="System\ReaderWriterLockSlim.cs" />
+    <Compile Include="System\System.Collections.Generic\HashSet.cs" />
+    <Compile Include="System\System.Collections.Generic\ISet.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\FileMapIOException.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\MapViewStream.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\MemoryMappedFile.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\Win32APIs.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Dynamic\System.Linq.Dynamic.v2.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\BinaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ConditionalExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ConstantExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ElementInit.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\EmitContext.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Expression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionPrinter.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionTransformer.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionType.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionVisitor.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Expression_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Extensions.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\InvocationExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\LambdaExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ListInitExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberAssignment.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberBindingType.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberInitExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberListBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberMemberBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MethodCallExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\NewArrayExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\NewExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ParameterExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\TypeBinaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\UnaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Ext.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Check.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Enumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableExecutor.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableExecutor_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableQuery_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Grouping.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IGrouping.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ILookup_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedEnumerable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedQueryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedQueryable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryProvider.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Lookup.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedParallelQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedSequence.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelExecutionMode.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelMergeOptions.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Queryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QueryableEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QueryableTransformer.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QuickSort.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortContext.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortDirection.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortSequenceContext.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\ExecutionScope.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\ExtensionAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System.Runtime.CompilerServices\IStrongBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System.Runtime.CompilerServices\StrongBox_T.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System\Action.cs" />
+    <Compile Include="System\System\Func.cs" />
+    <Compile Include="Core\CacheFile\DataFileSearch.cs" />
+    <Compile Include="System\ThreadSafeCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Browser\form\Dialogs\ChromeDialog.resx">
+      <DependentUpon>ChromeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser\form\Dialogs\ConfirmDialog.resx">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser\form\Dialogs\PasswordDialog.resx">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser\form\Dialogs\PromptDialog.resx">
+      <DependentUpon>PromptDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser\form\PropertiesDialog.resx">
+      <DependentUpon>PropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DLL\Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Browser\core\Readme.txt" />
+    <Content Include="Core\7zip\Readme.txt" />
+    <Content Include="Core\Mustache\mustache-sharp.csproj" />
+    <Content Include="Core\Mustache\_ReadMe.txt" />
+    <Content Include="Core\Protobuf\_ReadMe.txt" />
+    <EmbeddedResource Include="DLL\UIAutomationClient.dll" />
+    <EmbeddedResource Include="DLL\UIAutomationTypes.dll" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\web.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\word.png" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\bold.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\bulletedlist.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\createlink.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\fontforecolorpicker.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\insertimage.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\italic.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\justifycenter.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\justifyfull.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\justifyleft.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\justifyright.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\numberedlist.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\underline.gif" />
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\Icons\unlink.gif" />
+    <EmbeddedResource Include="DLL\Interop.SHDocVw.dll" />
+    <EmbeddedResource Include="DLL\Microsoft.mshtml.dll" />
+    <Content Include="GUI\Controls\ComboBox\ReadMe.txt" />
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorFieldPanelCursor.cur" />
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSwatches.xml" />
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\AddNewColorSwatchForm.resx">
+      <DependentUpon>AddNewColorSwatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorDragForm.resx">
+      <DependentUpon>ColorDragForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorFieldPanel.resx">
+      <DependentUpon>ColorFieldPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorPanel.resx">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSpace.resx">
+      <DependentUpon>ColorSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSpaceComponent.resx">
+      <DependentUpon>ColorSpaceComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSpaceComponentTextBox.resx">
+      <DependentUpon>ColorSpaceComponentTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSwatch.resx">
+      <DependentUpon>ColorSwatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ColorSwatchPanel.resx">
+      <DependentUpon>ColorSwatchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\ComponentTextBox.resx">
+      <DependentUpon>ComponentTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\DragForm.resx">
+      <DependentUpon>DragForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\HexTextBox.resx">
+      <DependentUpon>HexTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\HsbColorSpace.resx">
+      <DependentUpon>HsbColorSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\RgbColorSpace.resx">
+      <DependentUpon>RgbColorSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\ColorPicker\Sano.Utility\HitTestValues.resx">
+      <DependentUpon>HitTestValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\SplitButton.resx">
+      <DependentUpon>SplitButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controls\HtmlEditor\HTMLEditor.resx">
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Browser\core\Generated\Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Browser\core\ClassDiagrams\nsIDOMNode.cd" />
+    <None Include="Browser\core\DOM\Events\DomEvents.cd" />
+    <None Include="Browser\core\Geckofx-Core.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Browser\core\GeckoFX.snk" />
+    <None Include="Browser\core\Net\Requests.cd" />
+    <None Include="Browser\core\Windows\Taskbar\JumpListItems.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
